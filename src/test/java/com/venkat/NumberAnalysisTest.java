@@ -49,4 +49,12 @@ public class NumberAnalysisTest {
         thrownEx.expectMessage("Negative number not valid.");
         numberAnalysis.numberInWords(-5);
     }
+
+    @Test
+    public void exceededNumberTest(){
+
+        thrownEx.expect(RuntimeException.class);
+        thrownEx.expectMessage("Number is exceeded the limit.");
+        numberAnalysis.numberInWords(9999999990L);
+    }
 }

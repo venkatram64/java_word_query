@@ -13,11 +13,24 @@ public class NumberAnalysis {
     public NumberAnalysis(){
     }
 
-    public String numberInWords(int number){
+    public int wordLength(long number){
+        int count = 0;
+        while(number > 0){
+            count++;
+            number /= 10;
+        }
+        return count;
+    }
+
+    public String numberInWords(long number){
         String words = "";
 
         if(number < 0){
             throw new RuntimeException("Negative number not valid.");
+        }
+
+        if (wordLength(number) > 9){
+            throw new RuntimeException("Number is exceeded the limit.");
         }
 
         if (number == 0) {
@@ -42,13 +55,13 @@ public class NumberAnalysis {
         if (number > 0) {
 
             if (number < 20) {
-                words += unitsPlace[number];
+                words += unitsPlace[(int)number];
             } else {
-                words += tensPlace[number / 10];
+                words += tensPlace[(int)number / 10];
                 words = words.trim();
                 if ((number % 10) > 0) {
                     words = words.trim();
-                    words += " " + unitsPlace[number % 10];
+                    words += " " + unitsPlace[(int)number % 10];
                 }
             }
         }
