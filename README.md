@@ -1,0 +1,1 @@
+this NumberAalysis class will accept only long as input.
