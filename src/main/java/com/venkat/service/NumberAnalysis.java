@@ -83,7 +83,7 @@ public class NumberAnalysis {
         //String words = numberAnalysis.numberToWord(2456789);
         //String words = numberAnalysis.numberToWord(999999999);
         //String words = numberAnalysis.numberInWords(56945781);
-        String words = numberAnalysis.numberInWords(999999999);
+        String words = numberAnalysis.numberInWords(10000000);
         System.out.println(words);
     }
 }
