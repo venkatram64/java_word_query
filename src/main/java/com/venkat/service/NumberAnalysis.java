@@ -2,11 +2,11 @@ package com.venkat.service;
 
 public class NumberAnalysis {
 
-    private String unitsPlace[] = { "zero", "one", "two", "three", "four", "five", "six",
+    private String[] unitsPlace = { "zero", "one", "two", "three", "four", "five", "six",
             "seven", "eight", "nine", "ten", "eleven", "twelve","thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
             "eighteen", "nineteen" };
 
-    private String tensPlace[] = { "zero", "ten", "twenty", "thirty", "forty", "fifty",
+    private String[] tensPlace = { "zero", "ten", "twenty", "thirty", "forty", "fifty",
             "sixty", "seventy", "eighty", "ninety" };
 
 
