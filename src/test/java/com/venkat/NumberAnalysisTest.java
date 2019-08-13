@@ -44,7 +44,6 @@ public class NumberAnalysisTest {
 
     @Test
     public void negativeNumberTest(){
-
         thrownEx.expect(RuntimeException.class);
         thrownEx.expectMessage("Negative number not valid.");
         numberAnalysis.numberInWords(-5);
@@ -52,9 +51,14 @@ public class NumberAnalysisTest {
 
     @Test
     public void exceededNumberTest(){
-
         thrownEx.expect(RuntimeException.class);
         thrownEx.expectMessage("Number is exceeded the limit.");
         numberAnalysis.numberInWords(9999999990L);
+    }
+
+    @Test
+    public void bigNumberTest(){
+        assertEquals(numberAnalysis.numberInWords(999999999L),
+                "nine hundred and ninety nine million nine hundred and ninety nine thousand nine hundred and ninety nine");
     }
 }

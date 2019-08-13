@@ -25,13 +25,7 @@ public class NumberAnalysis {
     public String numberInWords(long number){
         String words = "";
 
-        if(number < 0){
-            throw new RuntimeException("Negative number not valid.");
-        }
-
-        if (wordLength(number) > 9){
-            throw new RuntimeException("Number is exceeded the limit.");
-        }
+        validateInpu(number);
 
         if (number == 0) {
             return "zero";
@@ -68,12 +62,23 @@ public class NumberAnalysis {
         return words.replaceAll("\\s+"," ");
     }
 
+    private void validateInpu(long number) {
+        if(number < 0){
+            throw new RuntimeException("Negative number not valid.");
+        }
+
+        if (wordLength(number) > 9){
+            throw new RuntimeException("Number is exceeded the limit.");
+        }
+    }
+
     public static void main(String[] args) {
         //56945781 = fifty six million nine hundred and forty five thousand seven hundred and eighty one
         NumberAnalysis numberAnalysis = new NumberAnalysis();
         //String words = numberAnalysis.numberToWord(2456789);
         //String words = numberAnalysis.numberToWord(999999999);
-        String words = numberAnalysis.numberInWords(56945781);
+        //String words = numberAnalysis.numberInWords(56945781);
+        String words = numberAnalysis.numberInWords(999999999);
         System.out.println(words);
     }
 }
