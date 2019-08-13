@@ -25,7 +25,7 @@ public class NumberAnalysis {
     public String numberInWords(long number){
         String words = "";
 
-        validateInpu(number);
+        validateInput(number);
 
         if (number == 0) {
             return "zero";
@@ -46,8 +46,13 @@ public class NumberAnalysis {
             number %= 100;
         }
 
-        if (number > 0) {
+        words = getWords(number, words);
 
+        return words.replaceAll("\\s+"," ");
+    }
+
+    private String getWords(long number, String words) {
+        if (number > 0) {
             if (number < 20) {
                 words += unitsPlace[(int)number];
             } else {
@@ -59,10 +64,10 @@ public class NumberAnalysis {
                 }
             }
         }
-        return words.replaceAll("\\s+"," ");
+        return words;
     }
 
-    private void validateInpu(long number) {
+    private void validateInput(long number) {
         if(number < 0){
             throw new RuntimeException("Negative number not valid.");
         }
